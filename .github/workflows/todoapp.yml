@@ -6,17 +6,13 @@ on:
     # they introduce changes in the following paths:
     branches:
     paths:
-      - '.github/workflows/todoapp.yml'
-      - 'pkg/universe.dagger.io/examples/todoapp/**'
+      - ".github/workflows/todoapp.yml"
+      - "pkg/universe.dagger.io/examples/todoapp/**"
 
 env:
-  # ⚠️ APP_NAME must be unique across all of Netlify ⚠️
-  # The deploy action will fail with a curl error if this is not the case
-  # TODO: make app name optional in the Netlify package and generate one by default
-  APP_NAME: todoapp-dagger-europa
-  # Set this to your Netlify team:
-  NETLIFY_TEAM: blocklayer
-  # Configure NETLIFY_TOKEN as a GitHub Actions secret after you create one via:
+  # This needs to be unique across all of Netlify
+  APP_NAME: todoapp-dagger-takara
+  NETLIFY_TEAM: caad TakaraShinya's team
   # https://app.netlify.com/user/applications/personal
   NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
   # GitHub Actions friendly logs
@@ -28,7 +24,6 @@ jobs:
     name: Deploy with dagger dev
     runs-on: ubuntu-latest
     steps:
-
       - name: Clone repository
         uses: actions/checkout@v2
         # this repository has many commits,
@@ -57,7 +52,6 @@ jobs:
     name: Deploy with dagger 0.2.x last release
     runs-on: ubuntu-latest
     steps:
-
       - name: Clone repository
         uses: actions/checkout@v2
         # this repository has many commits,

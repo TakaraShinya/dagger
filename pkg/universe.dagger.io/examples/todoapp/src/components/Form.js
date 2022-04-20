@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 function Form(props) {
-  const [name, setName] = useState('');
-
+  const [name, setName] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -13,7 +12,6 @@ function Form(props) {
     setName("");
   }
 
-
   function handleChange(e) {
     setName(e.target.value);
   }
@@ -22,7 +20,7 @@ function Form(props) {
     <form onSubmit={handleSubmit}>
       <h2 className="label-wrapper">
         <label htmlFor="new-todo-input" className="label__lg">
-          What needs to be done?
+          What must be done today?(今日は何をしよう❓)
         </label>
       </h2>
 
